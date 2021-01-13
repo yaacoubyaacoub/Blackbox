@@ -1,0 +1,45 @@
+<%- include("partials/header") -%>
+
+<h1>Home</h1>
+
+<div class="container-fluid mb-5">
+  <h3>Upload Video:</h3>
+  <form action="/uploadVideo" enctype="multipart/form-data" method="post">
+    <input class="form-control" type="file" name="video" required/>
+    <button class="btn" type="submit" name="submit">Upload</button>
+    <h4>Video uploaded!"</h4>
+  </form>
+</div>
+
+<div class="row text-center container-fluid mt-5">
+    <video id="videoPlayer" width="650" poster="<%=thumbnailPath%>" controls>
+        <source src="<%=videoPath%>" type="video/mp4" />
+    </video>
+</div>
+
+<div>
+  <h4>Create Thumbnails</h4>
+    <form action="/thumbnails" method="post">
+      <input type="text" name="time" placeholder="time (in seconds)">
+      <button class="btn" type="submit" name="submit">Create Thumbnails</button>
+    </form>
+</div>
+
+<div>
+  <h4>Upload Thumbnail</h4>
+  <form action="/show_thumbnails" enctype="multipart/form-data" method="post">
+    <input type="file" name="image" required/>
+    <button class="btn" type="submit" name="submit">Upload Thumbnails</button>
+    </form>
+</div>
+
+<div>
+  <h4>Trim Video</h4>
+    <form action="/" method="post">
+      <input type="text" name="t1" placeholder="start time (in seconds)">
+      <input type="text" name="t2"placeholder="end time (in seconds)">
+      <button class="btn" type="submit" name="submit">Trim</button>
+    </form>
+</div>
+    
+<%- include("partials/footer") -%>

@@ -1,0 +1,13 @@
+<%- include("partials/header") -%>
+
+<h1>Home</h1>
+
+<div class="container-fluid mb-5">
+  <h3>Upload Video:</h3>
+  <form action="/uploadVideo" enctype="multipart/form-data" method="post">
+    <input class="form-control" type="file" name="video" required/>
+    <button class="btn" type="submit" name="submit">Upload</button>
+  </form>
+</div>
+    
+<%- include("partials/footer") -%>
